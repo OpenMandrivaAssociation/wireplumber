@@ -3,16 +3,13 @@
 %define api %(echo %{version} |cut -d. -f1-2)
 
 Name:       wireplumber
-Version:    0.4.11
+Version:    0.4.12
 Release:    1
 Summary:    A modular session/policy manager for PipeWire
 
 License:    MIT
 URL:        https://pipewire.pages.freedesktop.org/wireplumber/
 Source0:    https://gitlab.freedesktop.org/pipewire/%{name}/-/archive/%{version}/%{name}-%{version}.tar.bz2
-
-Patch0001:	https://src.fedoraproject.org/rpms/wireplumber/raw/rawhide/f/0001-alsa-use-obj_type-as-a-variable-name-to-avoid-shadow.patch
-Patch0002:	https://src.fedoraproject.org/rpms/wireplumber/raw/rawhide/f/0002-dbus-fix-crash-when-trying-to-reconnect.patch
 
 BuildRequires:  meson gcc pkgconfig
 BuildRequires:  pkgconfig(glib-2.0)
