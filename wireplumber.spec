@@ -3,7 +3,7 @@
 %define api %(echo %{version} |cut -d. -f1-2)
 
 Name:       wireplumber
-Version:    0.4.13
+Version:    0.4.14
 Release:    1
 Summary:    A modular session/policy manager for PipeWire
 
