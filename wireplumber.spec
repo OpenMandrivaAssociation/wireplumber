@@ -4,7 +4,7 @@
 
 Name:       wireplumber
 Version:    0.4.14
-Release:    1
+Release:    2
 Summary:    A modular session/policy manager for PipeWire
 
 License:    MIT
