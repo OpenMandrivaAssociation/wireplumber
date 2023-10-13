@@ -3,8 +3,8 @@
 %define api %(echo %{version} |cut -d. -f1-2)
 
 Name:       wireplumber
-Version:    0.4.14
-Release:    2
+Version:    0.4.15
+Release:    1
 Summary:    A modular session/policy manager for PipeWire
 
 License:    MIT
@@ -27,6 +27,7 @@ BuildRequires:  systemd-rpm-macros
 
 # Make sure that we have -libs package in the same version
 Requires:       %{libname} = %{EVRD}
+Recommends:     %{libname}-gobject%{?_isa} = %{EVRD}
 
 Provides:       pipewire-session-manager
 Conflicts:      pipewire-session-manager
@@ -51,6 +52,7 @@ to interface with WirePlumber using GObject.
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} = %{EVRD}
 Requires:       %{libname}%{?_isa} = %{EVRD}
+Recommends:     %{devname}-gobject{?_isa} = %{EVRD}
 
 %description -n %{devname}
 The %{name}-devel package contains libraries and header files for
@@ -108,6 +110,7 @@ mkdir -p %{buildroot}%{_sysconfdir}/wireplumber/{bluetooth.lua.d,common,main.lua
 %dir %{_sysconfdir}/wireplumber/main.lua.d
 %dir %{_sysconfdir}/wireplumber/policy.lua.d
 %{_datadir}/wireplumber/
+%{_datadir}/zsh/site-functions/_wpctl
 %{_userunitdir}/wireplumber.service
 %{_userunitdir}/wireplumber@.service
 
