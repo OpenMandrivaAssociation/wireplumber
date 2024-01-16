@@ -1,6 +1,7 @@
 %define libname %mklibname wireplumber
 %define devname %mklibname -d wireplumber
-%define api %(echo %{version} |cut -d. -f1-2)
+#define api %(echo %{version} |cut -d. -f1-2)
+%define api 0.5
 
 Name:       wireplumber
 Version:    0.4.81
