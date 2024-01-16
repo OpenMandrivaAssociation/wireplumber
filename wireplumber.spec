@@ -91,7 +91,7 @@ managing PipeWire.
 # Create local config skeleton
 mkdir -p %{buildroot}%{_sysconfdir}/wireplumber/{bluetooth.lua.d,common,main.lua.d,policy.lua.d}
 
-%find_lang wireplumber
+#find_lang wireplumber
 
 %posttrans
 %systemd_user_post %{name}.service
@@ -99,7 +99,8 @@ mkdir -p %{buildroot}%{_sysconfdir}/wireplumber/{bluetooth.lua.d,common,main.lua
 %preun
 %systemd_user_preun %{name}.service
 
-%files -f wireplumber.lang
+%files 
+#-f wireplumber.lang
 %license LICENSE
 %{_bindir}/wireplumber
 %{_bindir}/wpctl
