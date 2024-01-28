@@ -1,9 +1,10 @@
 %define libname %mklibname wireplumber
 %define devname %mklibname -d wireplumber
-%define api %(echo %{version} |cut -d. -f1-2)
+#define api %(echo %{version} |cut -d. -f1-2)
+%define api 0.5
 
 Name:       wireplumber
-Version:    0.4.17
+Version:    0.4.81
 Release:    1
 Summary:    A modular session/policy manager for PipeWire
 
@@ -11,7 +12,7 @@ License:    MIT
 URL:        https://pipewire.pages.freedesktop.org/wireplumber/
 Source0:    https://gitlab.freedesktop.org/pipewire/%{name}/-/archive/%{version}/%{name}-%{version}.tar.bz2
 
-BuildRequires:  meson gcc pkgconfig
+BuildRequires:  meson gcc pkgconfig gettext
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(gobject-2.0)
 BuildRequires:  pkgconfig(gmodule-2.0)
@@ -100,6 +101,7 @@ mkdir -p %{buildroot}%{_sysconfdir}/wireplumber/{bluetooth.lua.d,common,main.lua
 %systemd_user_preun %{name}.service
 
 %files -f wireplumber.lang
+%doc %{_datadir}/doc/wireplumber/examples/
 %license LICENSE
 %{_bindir}/wireplumber
 %{_bindir}/wpctl
@@ -111,6 +113,8 @@ mkdir -p %{buildroot}%{_sysconfdir}/wireplumber/{bluetooth.lua.d,common,main.lua
 %dir %{_sysconfdir}/wireplumber/policy.lua.d
 %{_datadir}/wireplumber/
 %{_datadir}/zsh/site-functions/_wpctl
+%{_datadir}/pipewire/wireplumber.conf
+%{_datadir}/pipewire/wireplumber.conf.d/alsa-vm.conf
 %{_userunitdir}/wireplumber.service
 %{_userunitdir}/wireplumber@.service
 
