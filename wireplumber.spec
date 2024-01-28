@@ -12,7 +12,7 @@ License:    MIT
 URL:        https://pipewire.pages.freedesktop.org/wireplumber/
 Source0:    https://gitlab.freedesktop.org/pipewire/%{name}/-/archive/%{version}/%{name}-%{version}.tar.bz2
 
-BuildRequires:  meson gcc pkgconfig
+BuildRequires:  meson gcc pkgconfig gettext
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(gobject-2.0)
 BuildRequires:  pkgconfig(gmodule-2.0)
