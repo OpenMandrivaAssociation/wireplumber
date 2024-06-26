@@ -4,7 +4,7 @@
 %define api 0.5
 
 Name:       wireplumber
-Version:    0.5.3
+Version:    0.5.4
 Release:    1
 Summary:    A modular session/policy manager for PipeWire
 
