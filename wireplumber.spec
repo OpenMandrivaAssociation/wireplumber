@@ -5,7 +5,7 @@
 
 Name:       wireplumber
 Version:    0.5.8
-Release:    1
+Release:    2
 Summary:    A modular session/policy manager for PipeWire
 
 License:    MIT
@@ -32,6 +32,9 @@ Recommends:     %{libname}-gobject%{?_isa} = %{EVRD}
 
 Provides:       pipewire-session-manager
 Conflicts:      pipewire-session-manager
+
+%patchlist
+wireplumber-dont-run-for-system-users.patch
 
 %package -n %{libname}
 Summary:        Libraries for WirePlumber clients
