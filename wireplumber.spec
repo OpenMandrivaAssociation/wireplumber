@@ -4,7 +4,7 @@
 %define api 0.5
 
 Name:       wireplumber
-Version:    0.5.12
+Version:    0.5.13
 Release:    1
 Summary:    A modular session/policy manager for PipeWire
 
@@ -116,6 +116,7 @@ mkdir -p %{buildroot}%{_sysconfdir}/wireplumber/{bluetooth.lua.d,common,main.lua
 %dir %{_sysconfdir}/wireplumber/policy.lua.d
 %{_datadir}/wireplumber/
 %{_datadir}/zsh/site-functions/_wpctl
+%{_datadir}/bash-completion/completions/wpctl
 #{_datadir}/pipewire/wireplumber.conf
 #{_datadir}/pipewire/wireplumber.conf.d/alsa-vm.conf
 %{_userunitdir}/wireplumber.service
