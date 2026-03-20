@@ -116,6 +116,7 @@ mkdir -p %{buildroot}%{_sysconfdir}/wireplumber/{bluetooth.lua.d,common,main.lua
 %dir %{_sysconfdir}/wireplumber/policy.lua.d
 %{_datadir}/wireplumber/
 %{_datadir}/zsh/site-functions/_wpctl
+%{_datadir}/bash-completion/completions/wpctl
 #{_datadir}/pipewire/wireplumber.conf
 #{_datadir}/pipewire/wireplumber.conf.d/alsa-vm.conf
 %{_userunitdir}/wireplumber.service
